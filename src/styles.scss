@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+@import './styles/material-theme';
+@import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
+
+
+html, body {
+    margin: 0;
+    height: 100%;
+  }
+  
+  @media only screen and (max-width: 600px)  {
+    html {
+      font-size: 80%;
+    }
+  }
+
+  form { 
+    margin: 10 auto; 
+    width:250px;
+    padding: 15px;
+    }

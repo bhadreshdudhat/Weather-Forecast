@@ -1,0 +1,26 @@
+<div [ngClass]="{'dark-theme': isDarkTheme | async}">
+  <div class="mat-app-background">
+    <app-toolbar></app-toolbar>
+    <div class="content mat-typography">
+      <aside></aside>
+
+      <div class="container">
+      <form #f="ngForm" (ngSubmit)="onSubmitZip(f.value)">
+        <div class="form-group">
+          <label for="notes">Zip Code : </label>
+          <input ngModel name="zipcd" id="zipcd" type="text" class="form-control" [(ngModel)]="zipcode">
+        </div>
+        <div class="center-block">
+        <button class="btn btn-primary">Get Weather</button>
+        </div>
+      </form>
+    </div>
+    
+     <div>
+      <app-weather-description [weatherDatazip]="weatherData" [forcastDatazip]="forecastData"></app-weather-description>
+     </div>
+      <aside></aside>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

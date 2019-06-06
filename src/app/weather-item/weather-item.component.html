@@ -1,0 +1,33 @@
+<div *ngIf="weatherData" class="app-weather-item">
+  <div *ngIf="weatherData.name && weatherData.sys.country" class="app-weather-item__title">
+    Location: {{weatherData.name}}, {{weatherData.sys.country}}
+  </div>
+
+  <div *ngIf="weatherData.dt_txt" class="app-weather-item__coordinates">
+    {{weatherData.dt_txt}}
+  </div>
+
+  <div class="app-weather-item__weather">
+    <div *ngFor="let weatherItem of weatherData.weather" class="app-weather-item__weather-item">
+      <span class="app-weather-item__weather-item-text">
+         weather conditions : {{weatherItem.main}}
+      </span>
+      <span class="app-weather-item__weather-item-text app-weather-item__weather-item-text_descr">
+        {{weatherItem.description}}
+      </span>
+    </div>
+  </div>
+
+  <div class="app-weather-item__info">
+    <div>
+       Temperature: {{(weatherData.main.temp - 273).toFixed(1)}} 
+    </div>
+    <div>
+     high  Temperature: {{(weatherData.main.temp_min - 273).toFixed(1)}} 
+    </div>
+    <div>
+      low  Temperature: {{(weatherData.main.temp_max - 273).toFixed(1)}} 
+    </div>
+  </div>
+
+</div>
