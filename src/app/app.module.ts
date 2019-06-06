@@ -12,6 +12,8 @@ import { WeatherItemComponent } from './weather-item/weather-item.component';
 import { ForecastDescriptionComponent } from './forecast-description/forecast-description.component';
 import { FormsModule } from '@angular/forms';
 import { WeatherService } from 'src/services/weather.service';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { WeatherService } from 'src/services/weather.service';
     CoreModule,
     BrowserAnimationsModule,HttpClientModule,FormsModule,
     AppRoutingModule,
-    ToolbarModule
+    ToolbarModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [WeatherService],
   bootstrap: [AppComponent]
